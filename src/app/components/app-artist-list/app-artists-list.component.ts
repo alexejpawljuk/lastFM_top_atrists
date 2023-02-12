@@ -5,6 +5,7 @@ import {Component, OnInit} from "@angular/core"
 import {Artist} from "../../models/artist.model"
 import IArtist = Artist.IArtist;
 import {ArtistService} from "../../services/artist.service";
+import IArtistWithMetaInformation = Artist.IArtistWithMetaInformation;
 
 @Component({
   selector: "app-artist-list-component",
@@ -18,18 +19,18 @@ export class ArtistListComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.changeArtistToShowSub()
-    this.changeArtistsCountry()
+    this.onChangeArtistToShow()
+    this.onChangeArtistsCountry()
   }
 
-  private changeArtistsCountry(): void {
+  private onChangeArtistsCountry(): void {
     this.artistService.changeArtistsCountry$.subscribe((value) => this.loading = value)
   }
 
-  private changeArtistToShowSub(): void {
+  private onChangeArtistToShow(): void {
     this.artistService.artistsToShow$
       .subscribe(artists => {
-        this.artists = artists.map(artist => artist)
+        this.artists = artists
         if (this.artists.length) this.loading = false
       })
   }
