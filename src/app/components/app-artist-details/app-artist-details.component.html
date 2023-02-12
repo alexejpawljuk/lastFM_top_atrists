@@ -1,0 +1,8 @@
+<div>
+
+  <div *ngFor="let artistMetaInformation of artistMetaInformation">
+    <app-artist-details-item [items]="artistMetaInformation.albums" [title]="'Top 5 albums'" ></app-artist-details-item>
+    <app-artist-details-item [items]="artistMetaInformation.tracks" [title]="'Top 5 tracks'"></app-artist-details-item>
+  </div>
+
+</div>

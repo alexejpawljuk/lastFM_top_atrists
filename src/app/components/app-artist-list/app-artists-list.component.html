@@ -1,0 +1,9 @@
+<div>
+  <app-select-country-of-artists></app-select-country-of-artists>
+
+  <div *ngIf="loading" class="text-center font-bold">
+    Loading...
+  </div>
+
+  <app-artist-component *ngFor="let artist of artists" [artist]="artist"></app-artist-component>
+</div>

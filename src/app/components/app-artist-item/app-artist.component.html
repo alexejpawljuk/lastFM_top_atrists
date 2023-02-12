@@ -1,0 +1,14 @@
+<div class="py-4 px-6 border border-blue-200 rounded flex items-center flex-col mb-8 bg-gray-50">
+  <h1>{{artist.name | titlecase}}</h1>
+  <img [src]="artist.image[1]['#text']" [alt]="artist.name">
+  <p>Listeners: {{artist.listeners}}</p>
+
+  <button mat-stroked-button class="my-5" [color]="showDetails ? 'accent' : 'primary'" (click)="showDetails = !showDetails">
+    {{showDetails ? "Hide" : "Show"}} details
+  </button>
+
+  <div *ngIf="showDetails">
+    <app-app-artist-details [artist]="artist"></app-app-artist-details>
+  </div>
+
+</div>
