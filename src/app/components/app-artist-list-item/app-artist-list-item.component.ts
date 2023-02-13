@@ -8,10 +8,10 @@ import IArtist = Artist.IArtist
 
 
 @Component({
-  selector: "app-artist-component",
-  templateUrl: "./app-artist.component.html"
+  selector: "app-artist-list-item-component",
+  templateUrl: "./app-artist-list-item.component.html"
 })
-export class AppArtistComponent{
+export class AppArtistListItemComponent {
   @Input() artist: IArtist
 
   showDetails: boolean = false

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
-import { AppArtistComponent } from "./components/app-artist-item/app-artist.component";
+import { AppArtistListItemComponent } from "./components/app-artist-list-item/app-artist-list-item.component";
 import { ArtistListComponent } from "./components/app-artist-list/app-artists-list.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppNavigationComponent } from "./components/app-navigation/app-navigation.component";
@@ -23,7 +23,7 @@ import { MatButtonModule } from "@angular/material/button";
   declarations: [
     AppComponent,
     ArtistListComponent,
-    AppArtistComponent,
+    AppArtistListItemComponent,
     AppNavigationComponent,
     AppGlobalErrorComponent,
     AppArtistDetailsComponent,

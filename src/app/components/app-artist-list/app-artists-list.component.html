@@ -5,7 +5,7 @@
     Loading...
   </div>
 
-  <app-artist-component
+  <app-artist-list-item-component
     *ngFor="let artist of artists$ | async" [artist]="artist"
-  ></app-artist-component>
+  ></app-artist-list-item-component>
 </div>
