@@ -1,12 +1,12 @@
 /// <reference path="../models/artist.model.ts" />
 /// <reference path="../models/lfm-api.model.ts" />
 
-import {Injectable} from "@angular/core"
-import {HttpClient, HttpErrorResponse} from "@angular/common/http"
-import {catchError, delay, Observable, retry, throwError} from "rxjs"
-import {ErrorService} from "./error.service";
+import { Injectable } from "@angular/core"
+import { HttpClient, HttpErrorResponse } from "@angular/common/http"
+import { catchError, delay, Observable, retry, throwError } from "rxjs"
+import { ErrorService } from "./error.service";
 
-import {LFM_API} from "../models/lfm-api.model";
+import { LFM_API } from "../models/lfm-api.model";
 import IOptionsFetch = LFM_API.IOptionsFetch
 import IGetGeoTopArtistsResponse = LFM_API.IGetGeoTopArtistsResponse
 import IGetTopAlbumResponse = LFM_API.IGetTopAlbumResponse
@@ -26,7 +26,6 @@ export class LFMApiService {
         params: {format: "json", api_key: this.api_key, ...options?.params}
       })
       .pipe(
-        delay(1000),
         retry(2),
         catchError(this.errorHandler.bind(this))
       )

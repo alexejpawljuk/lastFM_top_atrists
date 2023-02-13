@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core'
-import {BehaviorSubject} from "rxjs"
-import {LFMApiService} from "./lFM-api.service"
+import { Injectable } from '@angular/core'
+import { BehaviorSubject } from "rxjs"
+import { LFMApiService } from "./lFM-api.service"
 
-import {Artist} from "../models/artist.model"
-import {LFM_API} from "../models/lfm-api.model"
+import { Artist } from "../models/artist.model"
+import { LFM_API } from "../models/lfm-api.model"
 import IArtist = Artist.IArtist
 import IArtistMetaInformation = Artist.IArtistWithMetaInformation
 import ICountry = LFM_API.ICountry;

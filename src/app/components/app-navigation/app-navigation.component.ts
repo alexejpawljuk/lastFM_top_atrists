@@ -1,9 +1,9 @@
-import {Component, OnInit} from "@angular/core"
-import {FormControl} from "@angular/forms"
-import {ArtistService} from "../../services/artist.service"
-import {Artist} from "../../models/artist.model"
+import { Component, OnInit } from "@angular/core"
+import { FormControl } from "@angular/forms"
+import { ArtistService } from "../../services/artist.service"
+import { Artist } from "../../models/artist.model"
 import IArtist = Artist.IArtist
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-navigation",

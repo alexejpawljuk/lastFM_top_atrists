@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {LFM_API} from "../../models/lfm-api.model";
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { LFM_API } from "../../models/lfm-api.model";
 import ICountry = LFM_API.ICountry;
-import {ArtistService} from "../../services/artist.service";
+import { ArtistService } from "../../services/artist.service";
 
 @Component({
   selector: 'app-select-country-of-artists',

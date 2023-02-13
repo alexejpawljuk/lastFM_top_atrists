@@ -1,6 +1,6 @@
-import {Component, OnInit, Input} from '@angular/core'
-import {ArtistService} from "../../services/artist.service";
-import {Artist} from "../../models/artist.model";
+import { Component, OnInit, Input } from '@angular/core'
+import { ArtistService } from "../../services/artist.service";
+import { Artist } from "../../models/artist.model";
 import IArtist = Artist.IArtist;
 import IArtistWithMetaInformation = Artist.IArtistWithMetaInformation
 
