@@ -8,11 +8,11 @@ import ITrack = Artist.ITrack
 export namespace LFM_API {
 
 
-  export type IMethod = "geo.gettopartists" | "artist.gettopalbums" | "artist.gettoptracks" | "test"
+  export type IMethod = "geo.gettopartists" | "artist.gettopalbums" | "artist.gettoptracks"
   export type IContentType = "application/json"
   export type IFormat = "json"
   export type IApiKey = string
-  export type ICountry = "Germany" | "Spain" | "Canada" | "test"
+  export type ICountry = "Germany" | "Spain" | "Canada"
   export type ILimit = number
 
 

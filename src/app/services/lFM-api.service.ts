@@ -25,10 +25,7 @@ export class LFMApiService {
         headers: {"content-type": "application/json", ...options?.headers},
         params: {format: "json", api_key: this.api_key, ...options?.params}
       })
-      .pipe(
-        retry(2),
-        catchError(this.errorHandler.bind(this))
-      )
+      .pipe(retry(2), catchError(this.errorHandler.bind(this)))
   }
 
   public fetchGeoTopArtists(options: LFM_API.IOptionArtist): Observable<IGetGeoTopArtistsResponse> {

@@ -6,7 +6,6 @@ import { Component, Input } from "@angular/core"
 import { Artist } from "../../models/artist.model"
 import IArtist = Artist.IArtist
 
-
 @Component({
   selector: "app-artist-list-item-component",
   templateUrl: "./app-artist-list-item.component.html"
@@ -14,5 +13,5 @@ import IArtist = Artist.IArtist
 export class AppArtistListItemComponent {
   @Input() artist: IArtist
 
-  showDetails: boolean = false
+   public showDetails: boolean = false
 }
