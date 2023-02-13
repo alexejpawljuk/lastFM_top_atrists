@@ -1,23 +1,18 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ErrorService} from "../../services/error.service";
-import {Subscription} from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { ErrorService } from "../../services/error.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-global-error',
   templateUrl: './app-global-error.component.html',
 })
-export class AppGlobalErrorComponent implements OnInit, OnDestroy {
+export class AppGlobalErrorComponent implements OnInit {
   error: string
-  subscription: Subscription
 
   constructor(public errorService: ErrorService) {
   }
 
   ngOnInit() {
-    this.subscription = this.errorService.error$.subscribe(err => this.error = err)
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.errorService.error$.subscribe(err => this.error = err)
   }
 }

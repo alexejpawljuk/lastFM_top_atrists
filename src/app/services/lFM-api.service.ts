@@ -26,6 +26,7 @@ export class LFMApiService {
         params: {format: "json", api_key: this.api_key, ...options?.params}
       })
       .pipe(
+        delay(1000),
         retry(2),
         catchError(this.errorHandler.bind(this))
       )

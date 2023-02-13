@@ -6,6 +6,6 @@
   </div>
 
   <app-artist-component
-    *ngFor="let artist of artists" [artist]="artist"
+    *ngFor="let artist of artists$ | async" [artist]="artist"
   ></app-artist-component>
 </div>

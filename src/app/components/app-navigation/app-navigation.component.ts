@@ -3,6 +3,7 @@ import {FormControl} from "@angular/forms"
 import {ArtistService} from "../../services/artist.service"
 import {Artist} from "../../models/artist.model"
 import IArtist = Artist.IArtist
+import {Observable} from "rxjs";
 
 @Component({
   selector: "app-navigation",
@@ -11,8 +12,7 @@ import IArtist = Artist.IArtist
 export class AppNavigationComponent implements OnInit {
   title: string = "LAST FM"
   searchControl: FormControl = new FormControl("")
-
-  artists: IArtist[]
+  artists$: Observable<IArtist[]>
 
   constructor(private artistService: ArtistService) {
   }
@@ -20,15 +20,15 @@ export class AppNavigationComponent implements OnInit {
   ngOnInit() {
     this.changeInputValueSub()
     this.clearInputSub()
-    this.artistsSub()
+    this.onChangeArtistsToShow()
   }
 
   public displayFn(artist: IArtist): string {
     return artist && artist.name ? artist.name : ''
   }
 
-  private artistsSub(): void {
-    this.artistService.artistsToShow$.subscribe(artists => this.artists = artists)
+  private onChangeArtistsToShow(): void {
+    this.artists$ = this.artistService.artistsToShow$
   }
 
   private clearInputSub() {

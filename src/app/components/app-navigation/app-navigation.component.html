@@ -11,7 +11,7 @@
         <mat-label>Search...</mat-label>
         <input type="text" matInput [formControl]="searchControl" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let artist of artists" [value]="artist">
+          <mat-option *ngFor="let artist of artists$ | async" [value]="artist">
             {{artist.name}}
           </mat-option>
         </mat-autocomplete>
