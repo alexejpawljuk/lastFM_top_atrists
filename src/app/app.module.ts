@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppNavigationComponent } from "./components/app-navigation/app-navigation.component";
 import { AppGlobalErrorComponent } from './components/app-global-error/app-global-error.component';
 import { AppArtistDetailsComponent } from './components/app-artist-details/app-artist-details.component';
-import { AppSelectCountryOfArtistsComponent } from "./components/app-select-country-of-artists/app-select-country-of-artists.component";
+import { AppSelectCountryOfArtistsComponent } from "./components/UI/app-select-country-of-artists/app-select-country-of-artists.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from "@angular/material/input";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
@@ -18,6 +18,7 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatSelectModule } from "@angular/material/select";
 import { AppArtistDetailsItemComponent } from './components/app-artist-details-item/app-artist-details-item.component';
 import { MatButtonModule } from "@angular/material/button";
+import { AppInputSearchArtistComponent } from './components/UI/app-input-search-artist/app-input-search-artist.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatButtonModule } from "@angular/material/button";
     AppArtistDetailsComponent,
     AppSelectCountryOfArtistsComponent,
     AppArtistDetailsItemComponent,
+    AppInputSearchArtistComponent,
   ],
   imports: [
     BrowserModule,

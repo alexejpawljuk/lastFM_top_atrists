@@ -22,11 +22,11 @@ export class ArtistService {
   public changeArtistsCountry$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
   constructor(private LFMApi: LFMApiService) {
-    this.updateArtistsToShowSub()
-    this.fetchMetaInformationSub()
+    this.updateArtistsToShow()
+    this.fetchMetaInformation()
   }
 
-  private updateArtistsToShowSub(): void {
+  private updateArtistsToShow(): void {
     this.artists$.subscribe(artists => this.artistsToShow$.next(artists))
   }
 
@@ -36,13 +36,12 @@ export class ArtistService {
   }
 
   private fetchGeoTopArtists(country: ICountry): void {
-    this.LFMApi.fetchGeoTopArtists({country, limit: this.TOP_ARTISTS_COUNT})
-      .subscribe(artists => {
-        this.artists$.next(artists.topartists.artist)
-      })
+    this.LFMApi
+      .fetchGeoTopArtists({country, limit: this.TOP_ARTISTS_COUNT})
+      .subscribe(artists => this.artists$.next(artists.topartists.artist))
   }
 
-  private fetchMetaInformationSub(): void {
+  private fetchMetaInformation(): void {
     this.artists$.subscribe(artists => {
       const artistsMetaInformation: IArtistMetaInformation[] = []
 

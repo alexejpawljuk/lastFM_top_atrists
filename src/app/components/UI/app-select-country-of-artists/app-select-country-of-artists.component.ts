@@ -1,9 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormControl } from '@angular/forms'
-import { ArtistService } from "../../services/artist.service"
-import {Subject, takeUntil} from "rxjs"
+import { ArtistService } from "../../../services/artist.service"
+import { Subject, takeUntil } from "rxjs"
 
-import { LFM_API } from "../../models/lfm-api.model"
+import { LFM_API } from "../../../models/lfm-api.model"
 import ICountry = LFM_API.ICountry
 
 @Component({
