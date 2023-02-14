@@ -1,12 +1,12 @@
 <div
   class="py-4 px-6 border border-gray-500 rounded flex items-center flex-col mb-8 hover:bg-gray-100"
   [ngClass]="{'bg-gray-100': showDetails, 'bg-gray-0': !showDetails}">
-  <h1>{{artist.name | titlecase}}</h1>
+  <h1>{{ artist.name | titlecase }}</h1>
   <img [src]="artist.image[1]['#text']" [alt]="artist.name">
-  <p>Listeners: {{artist.listeners}}</p>
+  <p>Listeners: {{ artist.listeners }}</p>
 
   <button mat-stroked-button class="my-5" [color]="showDetails ? 'accent' : 'primary'" (click)="showDetails = !showDetails">
-    {{showDetails ? "Hide" : "Show"}} details
+    {{ showDetails ? "Hide" : "Show" }} details
   </button>
 
   <div *ngIf="showDetails">

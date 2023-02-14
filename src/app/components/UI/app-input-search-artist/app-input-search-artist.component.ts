@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import {Component, OnDestroy, OnInit} from '@angular/core'
 import { FormControl } from "@angular/forms"
 import { ArtistService } from "../../../services/artist.service"
 import { Observable, Subject, takeUntil } from "rxjs"
 
 import { Artist } from "../../../models/artist.model"
 import IArtist = Artist.IArtist
+
 
 @Component({
   selector: 'app-input-search-artist',
@@ -33,7 +34,8 @@ export class AppInputSearchArtistComponent implements OnInit, OnDestroy{
   }
 
   private onChangeArtistsToShow(): void {
-    this.artists$ = this.artistService.artistsToShow$.pipe(takeUntil(this.destroy$))
+    this.artists$ = this.artistService.artistsToShow$
+      .pipe(takeUntil(this.destroy$))
   }
 
   private clearInput(): void {

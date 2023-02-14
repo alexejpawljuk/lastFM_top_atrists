@@ -11,6 +11,10 @@ import IOptionsFetch = LFM_API.IOptionsFetch
 import IGetGeoTopArtistsResponse = LFM_API.IGetGeoTopArtistsResponse
 import IGetTopAlbumResponse = LFM_API.IGetTopAlbumResponse
 import IGetTopTracksResponse = LFM_API.IGetTopTracksResponse;
+import IOptionArtist = LFM_API.IOptionArtist
+import IOptionsAlbum = LFM_API.IOptionsAlbum
+import IOptionsTrack = LFM_API.IOptionsTrack
+
 
 @Injectable({providedIn: "root"})
 export class LFMApiService {
@@ -28,16 +32,15 @@ export class LFMApiService {
       .pipe(retry(2), catchError(this.errorHandler.bind(this)))
   }
 
-  public fetchGeoTopArtists(options: LFM_API.IOptionArtist): Observable<IGetGeoTopArtistsResponse> {
+  public fetchGeoTopArtists(options: IOptionArtist): Observable<IGetGeoTopArtistsResponse> {
     return this.fetch({params: {method: "geo.gettopartists", ...options}})
-    // return this.fetch({params: {method: "test", ...options}})
   }
 
-  public fetchTopAlbumsByArtist(options: LFM_API.IOptionsAlbum): Observable<IGetTopAlbumResponse> {
+  public fetchTopAlbumsByArtist(options: IOptionsAlbum): Observable<IGetTopAlbumResponse> {
     return this.fetch({params: {method: "artist.gettopalbums", ...options}})
   }
 
-  public fetchTopTracksByArtist(options: LFM_API.IOptionsAlbum): Observable<IGetTopTracksResponse> {
+  public fetchTopTracksByArtist(options: IOptionsTrack): Observable<IGetTopTracksResponse> {
     return this.fetch({params: {method: "artist.gettoptracks", ...options}})
   }
 

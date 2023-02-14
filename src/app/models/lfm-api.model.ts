@@ -6,15 +6,12 @@ import IArtistName = Artist.IArtistName
 import ITrack = Artist.ITrack
 
 export namespace LFM_API {
-
-
   export type IMethod = "geo.gettopartists" | "artist.gettopalbums" | "artist.gettoptracks"
   export type IContentType = "application/json"
   export type IFormat = "json"
   export type IApiKey = string
   export type ICountry = "Germany" | "Spain" | "Canada"
   export type ILimit = number
-
 
 
   export interface IGetTopAlbumResponse {
@@ -45,6 +42,11 @@ export namespace LFM_API {
   }
 
   export interface IOptionsAlbum {
+    artist: IArtistName
+    limit?: ILimit
+  }
+
+  export interface IOptionsTrack {
     artist: IArtistName
     limit?: ILimit
   }
