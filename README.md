@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+# Docker
+
+## Build Image
+Creates a Docker image from the current directory and tags it as last_fm.
+``` bash
+docker build -t last_fm .
+```
+- t last_fm — assigns the name (tag) last_fm to the image.
+- sets the build context to the current directory (where the Dockerfile is located).
+
+
+## Start a Container
+Runs a container from the last_fm image in detached mode and maps the port.
+``` bash 
+docker run -d -p 8070:8080 last_fm
+```
+- -d — runs the container in detached mode (in the background).
+- -p 8070:8080 — maps port 8080 of your local machine to port 8080 inside the container.
+
+
+Open http://localhost:8070 to view it in the browser
